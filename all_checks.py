@@ -2,6 +2,7 @@
 import os
 import sys
 
+# this is the comment about the check_reboot() function
 def check_reboot():
     """insert comment"""
     return os.path.exists("/run/reboot-required")
