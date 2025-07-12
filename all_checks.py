@@ -6,6 +6,8 @@ def check_reboot():
     """insert comment"""
     return os.path.exists("/run/reboot-required")
 
+# this is new comment
+
 def main():
     if check_reboot():
         print("Pending Reboot.")
