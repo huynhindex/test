@@ -3,6 +3,7 @@ import os
 import sys
 
 def check_reboot():
+    """insert comment"""
     return os.path.exists("/run/reboot-required")
 
 def main():
