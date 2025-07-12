@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import shutil
+import socket
 import sys
 import socket
 
@@ -8,6 +9,14 @@ import socket
 def check_reboot():
     """insert comment"""
     return os.path.exists("/run/reboot-required")
+
+def check_no_network():
+    """Return True if it fails to resolve Google's URL, False otherwise"""
+    try:
+        socket.gethostbyname("www.google.com")
+        return False
+    except:
+        return True
 
 def check_disk_full(disk, min_gb, min_percent):
     """Return True if there isn't enough disk space, False otherwise."""
