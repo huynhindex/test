@@ -3,7 +3,6 @@ import os
 import shutil
 import socket
 import sys
-import socket
 
 # this is the comment about the check_reboot() function
 def check_reboot():
@@ -31,19 +30,12 @@ def check_disk_full(disk, min_gb, min_percent):
 def check_root_full():
     """Returns True if the root partition is full, False otherwise."""
     return check_disk_full(disk="/", min_gb=2, min_percent=10)
-def check_no_network():
-    """Check if network not working"""
-    try:
-        socket.gethostbyname("www.google.com")
-        return False
-    except:
-        return True
+
 
 def main():
     checks=[
         (check_reboot, "Pending Reboot"),
         (check_root_full, "Root partition full"),
-        (check_no_network, "No working network."),
     ]
     everything_ok=True
     for check, msg in checks:
