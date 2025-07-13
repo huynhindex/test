@@ -4,7 +4,7 @@ import shutil
 import socket
 import sys
 
-# this is the comment about the check_reboot() function
+# this is the comment about the check_reboot() function and add more stuff comment to this file
 def check_reboot():
     """insert comment"""
     return os.path.exists("/run/reboot-required")
